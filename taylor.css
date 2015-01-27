@@ -1,16 +1,17 @@
 body { 
 	background:url(http://cdn1.ouchpress.com/media/celebrities/149/taylor-swift-22610.jpg) top right no-repeat; background-attachment:fixed; background-size: 100%; background-position: 450px 0px;
+
 }
 
 h1 { font-family: 'Didact Gothic', sans-serif; font-weight: 400; font-size: 120px; color: #D8B1D1;}
-p { font-family: 'Didact Gothic', sans-serif; font-weight: 400; font-size: 20px; color: #0B4F6C;}
+p { font-family: 'Didact Gothic', sans-serif; font-weight: 400; font-size: 15px; color: #0B4F6C;}
 
 .jumbotron {
 	background-color: transparent;
 }
 
 #description {
-	min-height: 300px;
+	min-height: 200px;
 }
 .col-md-3 {
 	min-height: 300px;
