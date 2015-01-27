@@ -1,0 +1,129 @@
+
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+
+    <script src="http://www.edlynyuen.com/taylor/jquery.min.js"></script>
+
+    <title>SWIFTCHOMANCY</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="layout.css">
+
+    <!-- Google Font for Heading -->
+    <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>    
+    
+    <!-- Google Font for Regular Text -->
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container" id="heading">
+        <h1 align="center">SWIFTCHOMANCY</h1>
+
+
+      <div id="about">
+        <p><img src="/taylor.jpg" width="400px"><em>Swiftchomancy</em> is divination by Taylor Swift lyrics chosen at random.</p>
+        <p><em>How this works:</em> Your Taylor Swift-approved destiny will pop out three excerpted song lyrics. Interpret each of them to be a representation of your past, present, and future. How you choose to interpret these words are up to you.</p>
+
+        <p>Ready for Taylor's words to heal your soul? It'll be like Swiftmas all over again except this is like, so much better.</p>
+      </div>
+      <br>
+      <center>
+        <INPUT TYPE="text" NAME="question" SIZE="30" id="question" placeholder="Enter your question here.">
+      <button class="btn btn-warning" id="runScript">Taylor Swift, I need your help!</button>
+    </center>
+
+    </div>
+        
+    <!-- Row of columns -->
+      <div id="adviceRow" class="row">
+        
+        <div class="col-md-4">
+          <h3>PAST</h3>
+          <p style="font-size: 15px"><span id="taylorpast" class="contentAdvice"></span></p>
+        </div>
+      
+        <div class="col-md-4">
+          <h3>PRESENT</h3>
+          <p style="font-size: 15px"><span id="taylorpresent" class="contentAdvice"></span></p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>FUTURE</h3>
+          <p style="font-size: 15px"><span id="taylorfuture" class="contentAdvice"></span></p>
+        </div>
+        
+      </div>
+    </div> 
+   
+    <script type="text/javascript">
+      var containers = {};
+      var all_containers = $("#adviceRow").find(".col-md-4").find("span");   
+      var randNum;
+      var hiArray = [
+          'walking through a crowd the village is aglow kaleidoscope of loud heartbeats under coats',
+          'everybody here wanted something more searching for a sound we hadn\'t heard before',
+          'and it said welcome to new york it\'s been waiting for you welcome to new york welcome to new york',
+          'it\'s a new soundtrack I could dance to this beat, beat forevermore the lights are so bright',
+          'but they never blind me, me welcome to new york it\'s been waiting for you',
+          'welcome to new york welcome to new york when we first dropped our bags on apartment floors',
+          'took our broken hearts put them in a drawer everybody here was someone else before', 
+          'you can want who you want boys and boys and girls and girls',
+          'long live the walls we crashed through How the kingdom lights shined just for me and you',
+          'I was screaming long live all the magic we made and bring on all the pretenders',
+          'I\'m not afraid long live all the mountains we moved',
+          'I had the time of my life fighting dragons with you',
+          'I was screaming long live that look on your face And bring on all the pretenders',
+          'one day, we will be remembered hold on to spinning around',
+          'Confetti falls to the ground May these memories break our fall',
+          'Will you take a moment, promise me this that you\'ll stand by me forever',
+          'But if God forbid fate should step in and force us into a goodbye if you have children some day',
+          'when they point to the pictures please tell them my name',
+          'tell them how the crowds went wild tell them how I hope they shine', 
+          'i remember tears streaming down your face when i said, "i\'ll never let you go"',
+          'when all those shadows almost killed your light i remember you said, "don\'t leave me here alone"',
+          'but all that\'s dead and gone and passed tonight just close your eyes the sun is going down',
+          'you\'ll be alright no one can hurt you now come morning light you and i\'ll be safe and sound don\'t you dare look out your window, darling',
+          'everything\'s on fire the war outside our door keeps raging on hold on to this lullaby',
+          'even when music\'s gone gone just close your eyes the sun is going down you\'ll be alright no one can hurt you now come morning light you and i\'ll be safe and sound ', 
+          'you, with your switching sides and your wildfire lies and your humiliation you have pointed out my flaws again',
+          'as if i don\'t already see them i walk with my head down trying to block you out \'cause i\'ll never impress you',
+          'i just wanna feel okay again i bet you got pushed around somebody made you cold but the cycle ends right now \'cause you can\'t lead me down that road',
+          'and you don\'t know, what you don\'t know... someday i\'ll be living in a big ol\' city and all you\'re ever gonna be is mean someday i\'ll be big enough',
+          'so you can\'t hit me and all you\'re ever gonna be is mean why you gotta be so mean?',
+          'i can see you years from now in a bar talking over a football game with that same big loud opinion but nobody\'s listening washed up and ranting about the same old bitter things drunk and grumbling on about how i can\'t sing', 
+          'and it\'s a sad picture, the final blow hits you somebody else gets what you wanted again you know it\'s all the same, another time and place',
+          'repeating history and you\'re getting sick of it but i believe in whatever you do and i\'ll do anything to see it through because these things will change can you feel it now? these walls that they put up to hold us back will fall down this revolution',
+          'the time will come for us to finally win we sing hallelujah, we sing hallelujah so we\'ve been outnumbered raided and now cornered it\'s hard to fight when the fight ain\'t fair we\'re getting stronger now find things they never found they might be bigger but we\'re faster and never scared you can walk away, say we don\'t need this but there\'s something in your eyes says we can beat this', 
+          ]; 
+
+      var buttonID = document.getElementById('runScript');
+      $(buttonID).click(function() 
+        {
+          var question = $('#question' ).val();
+          if (question) {
+            for(var i = 0; i < all_containers.length ; i++) {
+            $(all_containers[i]).empty().append(myFunction (hiArray));    
+          } 
+          }
+          else {
+            alert("Please enter a question");
+
+          }
+
+         });
+      
+      function myFunction(hiArray) {
+          randNum = Math.floor(Math.random() * hiArray.length); 
+          return hiArray[randNum];
+      };
+    
+    </script>   
+</footer>
+  </body>
+</html>

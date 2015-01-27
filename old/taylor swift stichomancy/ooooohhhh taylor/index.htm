@@ -1,0 +1,114 @@
+
+
+<html>
+    <head>
+    <script src="http://quicktest/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>TAYLOR SWIFT STICHOMANCY</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+      
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="layout.css">
+
+    <!-- Google Font for Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+    
+    <!-- Google Font for Before Sunrise Quote -->
+    <link href='http://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+      <div class="container section-intro" id="quote">
+        <h1 align="center">TAYLOR SWIFT STICHOMANCY</h1>
+        <center><img src="taylor.jpg" height="200"></center><br>
+          <p>So, it's January. Your college friends, who swore they'd never leave the sisterhood, are suddenly OMG, so coupled up and even worse, super engaged. Meanwhile, you're super single, hanging out with your two cats, swearing back at the cranky old lady who keeps yelling outside your window, writing anonymous hate mail to your exes, and wondering: "Um, how did I get here again?"</p>
+          <p>You need a change. You need advice from a higher power. You need...Taylor Swift.</p>
+          <p>Have no fear: Taylor and her song lyrics are so totally here to help you. Just type in your name + any question you have about love. Taylor Swift Stichomancy will pop out three songs: one representing your past, present, and future. How you choose to interpret your Taylor Swift-approved destiny is up to you.</p>
+          <p>Ready to play? It'll be like Swiftmas all over again except like, this is so much better than that.</p>
+          <br>
+          <center>
+            <button id="runScript">Taylor Swift, I need your help!</button>
+          </center>
+          <br>
+      </div>
+
+
+      
+      <div class="container section-intro" id="about">  
+      </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div id="adviceRow" class="row">
+            <div class="col-md-4">
+                <h3>PAST</h3>
+                <p style="font-size: 12px"><span id="taylorpast" class="contentAdvice"></span></p>
+            </div>
+            <div class="col-md-4">
+                <h3>PRESENT</h3>
+                <p style="font-size: 12px"><span id="taylorpresent" class="contentAdvice"></span></p>
+            </div>
+            <div class="col-md-4">
+                <h3>FUTURE?</h3>
+                <p style="font-size: 12px"><span id="taylorfuture" class="contentAdvice"></span></p>
+            </div>
+        </div>
+    </div> <!-- /container -->    
+
+
+
+
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+  
+<script type="text/javascript">
+    var containers = {};
+    var all_containers = $("#adviceRow").find(".col-md-4").find("span");   
+    var result;
+    var randNum;
+    var hiArray = [
+        'I hate that stupid old pickup truck you never let me drive!', 
+        'We\'re never getting back together. Like, ever.', 
+        'Marry me, Juliet', 
+        'Everything will be all right if you keep me next to you!', 
+        'I wonder if he knows he is all I ever dream about'
+    ]; 
+    
+    
+    //var buttonID = $("#runScript");
+    var buttonID = document.getElementById('runScript');
+    
+    $(buttonID).unbind();
+    $(buttonID).click(function() {
+        for(var i = 0; i < all_containers.length ; i++) {
+            $(all_containers[i]).empty().append(myFunction (hiArray));    
+        }
+    });
+    
+    
+   
+   
+    
+    
+         
+     
+    function myFunction(hiArray) {
+        //console.log(hiArray);
+        //document.getElementById('taylorpast').innerHTML += hiArray[randNum];
+        randNum = Math.floor(Math.random() * hiArray.length); 
+        return hiArray[randNum];
+    };
+    
+</script>      
+      
+      
+
+</body></html>

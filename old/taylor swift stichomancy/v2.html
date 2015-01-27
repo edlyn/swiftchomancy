@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Taylor Swift</title>
+    <script type="text/javascript">
+      window.onload = function(){
+          var hiArray = ['I hate that stupid old pickup truck you never let me drive!', 'We"re never getting back together. Like, ever.', 'Marry me, Juliet', 'Everything will be all right if you keep me next to you!', 'I wonder if he knows he is all I ever dream about'];
+          var randNum = Math.floor(Math.random() * hiArray.length);
+          document.getElementById('taylor').innerHTML += hiArray[randNum];
+        };
+    </script>
+  </head>
+
+  <body>
+    <div class="content">
+      <p>
+        <!--button onclick="function()">Click Me</button-->
+        <span id="taylor"></span>
+      </p>
+    </div>
+  </body>

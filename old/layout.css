@@ -1,0 +1,33 @@
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+.btn-warning { 
+  background-color: #A45E60; 
+  border: 0px;
+}
+
+#about {
+   padding-left: 250px;
+    padding-right: 250px;
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.col-md-4 {
+    text-align: justify;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+}
+
+h1 { 
+  font-family: 'Amatic SC', Arial, cursive; font-weight: 400; font-size: 100px; color: #A45E60; text-align: center;
+}
+
+h3 { 
+  font-family: 'Arial'; color: #A45E60; font-weight: 800; text-align: center;
+}
+
+p {
+  font-family: 'Gentium Basic', serif; font-weight: 400; font-size: 20px; color: #4C4B63;
+}

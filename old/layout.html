@@ -1,0 +1,121 @@
+
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+
+    <script src="http://www.edlynyuen.com/taylor/jquery.min.js"></script>
+
+    <title>SWIFTCHOMANCY</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="layout.css">
+
+    <!-- Google Font for Heading -->
+    <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>    
+    
+    <!-- Google Font for Regular Text -->
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container" id="heading">
+        <h1 align="center">SWIFTCHOMANCY</h1>
+
+      <div id="about">
+        <p><em>Swiftchomancy</em> is divination by Taylor Swift lyrics chosen at random.</p>
+        <p><em>How this works:</em> Your Taylor Swift-approved destiny will pop out three excerpted song lyrics. Interpret each of them to be a representation of your past, present, and future. How you choose to interpret these words are up to you.</p>
+
+        <p>Ready for Taylor's words to heal your soul? It'll be like Swiftmas all over again except this is like, so much better.</p>
+      </div>
+      <br>
+      <center>
+        <INPUT TYPE="text" NAME="question" SIZE="30" id="question" placeholder="Enter your question here.">
+      <button class="btn btn-warning" id="runScript">Taylor Swift, I need your help!</button>
+    </center>
+
+    </div>
+        
+    <!-- Row of columns -->
+      <div id="adviceRow" class="row">
+        
+        <div class="col-md-4">
+          <h3>PAST</h3>
+          <p style="font-size: 15px"><span id="taylorpast" class="contentAdvice"></span></p>
+        </div>
+      
+        <div class="col-md-4">
+          <h3>PRESENT</h3>
+          <p style="font-size: 15px"><span id="taylorpresent" class="contentAdvice"></span></p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>FUTURE</h3>
+          <p style="font-size: 15px"><span id="taylorfuture" class="contentAdvice"></span></p>
+        </div>
+        
+      </div>
+    </div> 
+   
+    <script type="text/javascript">
+      var containers = {};
+      var all_containers = $("#adviceRow").find(".col-md-4").find("span");   
+      var randNum;
+      var hiArray = [
+          '<b>WELCOME TO NEW YORK </b> walking through a crowd the village is aglow kaleidoscope of loud heartbeats under coats everybody here wanted something more searching for a sound we hadn\'t heard before and it said welcome to new york it\'s been waiting for you welcome to new york welcome to new york it\'s a new soundtrack I could dance to this beat, beat forevermore the lights are so bright',
+          '<b>WELCOME TO NEW YORK </b>but they never blind me, me welcome to new york it\'s been waiting for you welcome to new york welcome to new york when we first dropped our bags on apartment floors took our broken hearts put them in a drawer everybody here was someone else before and you can want who you want boys and boys and girls and girls',
+          '<b>LONG LIVE</b> long live the walls we crashed through How the kingdom lights shined just for me and you I was screaming long live all the magic we made and bring on all the pretenders I\'m not afraid long live all the mountains we moved I had the time of my life fighting dragons with you I was screaming long live that look on your face And bring on all the pretenders',
+          '<b>LONG LIVE</b> one day, we will be remembered hold on to spinning around Confetti falls to the ground May these memories break our fall Will you take a moment, promise me this that you\'ll stand by me forever But if God forbid fate should step in and force us into a goodbye if you have children some day when they point to the pictures please tell them my name tell them how the crowds went wild tell them how I hope they shine', 
+          '<b>SAFE AND SOUND</b> i remember tears streaming down your face when i said, "i\'ll never let you go" when all those shadows almost killed your light i remember you said, "don\'t leave me here alone" but all that\'s dead and gone and passed tonight just close your eyes the sun is going down you\'ll be alright no one can hurt you now come morning light you and i\'ll be safe and sound don\'t you dare look out your window, darling',
+          '<b>SAFE AND SOUND</b> everything\'s on fire the war outside our door keeps raging on hold on to this lullaby even when music\'s gone gone just close your eyes the sun is going down you\'ll be alright no one can hurt you now come morning light you and i\'ll be safe and sound ', 
+          '<b>MEAN</b> you, with your switching sides and your wildfire lies and your humiliation you have pointed out my flaws again as if i don\'t already see them i walk with my head down trying to block you out \'cause i\'ll never impress you i just wanna feel okay again i bet you got pushed around somebody made you cold but the cycle ends right now \'cause you can\'t lead me down that road',
+          '<b>MEAN</b> and you don\'t know, what you don\'t know... someday i\'ll be living in a big ol\' city and all you\'re ever gonna be is mean someday i\'ll be big enough so you can\'t hit me and all you\'re ever gonna be is mean why you gotta be so mean? and i can see you years from now in a bar talking over a football game with that same big loud opinion but nobody\'s listening washed up and ranting about the same old bitter things drunk and grumbling on about how i can\'t sing', 
+          '<b>CHANGE</b> and it\'s a sad picture, the final blow hits you somebody else gets what you wanted again you know it\'s all the same, another time and place repeating history and you\'re getting sick of it but i believe in whatever you do and i\'ll do anything to see it through because these things will change can you feel it now? these walls that they put up to hold us back will fall down this revolution',
+          '<b>CHANGE</b> the time will come for us to finally win we sing hallelujah, we sing hallelujah so we\'ve been outnumbered raided and now cornered it\'s hard to fight when the fight ain\'t fair we\'re getting stronger now find things they never found they might be bigger but we\'re faster and never scared you can walk away, say we don\'t need this but there\'s something in your eyes says we can beat this', 
+          '<b>INNOCENT</b> i guess you really did it this time left yourself in your warpath lost your balance on a tightrope lost your mind tryin\' to get it back wasn\'t it easier in your lunchbox days? always a bigger bed to crawl into wasn\'t it beautiful when you believed in everything and everybody believed in you? it\'s alright, just wait and see your string of lights is still bright to me',
+          '<b>INNOCENT</b> who you are is not where you\'ve been. you\'re still an innocent, you\'re still an innocent. did some things you can\'t speak of but at night you live it all again you wouldn\'t be shattered on the floor now if only you had seen what you know now then wasn\'t it easier in your firefly-catchin\' days? when everything out of reach, someone bigger brought down to you wasn\'t it beautiful runnin\' wild \'til you fell asleep before the monsters caught up to you?',
+          '<b>TIED TOGETHER WITH A SMILE</b> seems the only one who doesn\'t see your beauty is the face in the mirror looking back at you you walk around here thinking you\'re not pretty but that\'s not true, cause i know you',
+          '<b>TIED TOGETHER WITH A SMILE</b> you\'re losing it the water\'s high, you\'re jumping into it and letting go and no one knows that you cry, but you don\'t tell anyone that you might not be the golden one and you\'re tied together with a smile but you\'re coming undone i guess it\'s true that love was all you wanted cause you\'re giving it away like it\'s extra change hoping it will end up in his pocket but he leaves you out like a penny in the rain cause it\'s not his price to pay not his price to pay.',
+          '<b>TEARDROPS ON MY GUITAR</b> walks by me can he tell that i can\'t breathe? and there he goes, so perfectly, the kind of flawless i wish i could be she better hold him tight, give him all her love look in those beautiful eyes and know she\'s lucky \'cause \'cause he\'s the reason for the teardrops on my guitar the only one who\'s got enough of me to break my heart he\'s the song in the car i keep singing',
+          '<b>TEARDROPS ON MY GUITAR</b> don\'t know why i do he\'s the time taken up, but there\'s never enough and he\'s all that i need to fall into. so i drive home alone. as i turn out the light i\'ll put his picture down and maybe get some sleep tonight \'cause \'cause he\'s the reason for the teardrops on my guitar the only one who\'s got enough of me to break my heart',
+          '<b>THE OUTSIDE</b> i didn\'t know what i would find when i went looking for a reason, i know i didn\'t read between the lines and, baby, i\'ve got nowhere to go i tried to take the road less traveled by but nothing seems to work the first few times am i right? so how can i ever try to be better? nobody ever lets me in i can still see you, this ain\'t the best view on the outside looking in',
+          '<b>THE OUTSIDE</b> i\'ve been a lot of lonely places i\'ve never been on the outside you saw me there, but never knew i would give it all up to be a part of this, a part of you and now it\'s all too late so you see you could\'ve helped if you had wanted to but no one notices until it\'s too late to do anything',
+          '<b>FIFTEEN</b> you take a deep breath and you walk through the doors it\'s the morning of your very first day you say "hi" to your friends you ain\'t seen in a while try and stay out of everybody\'s way it\'s your freshman year and you\'re gonna be here for the next four years in this town hoping one of those senior boys will wink at you and say "you know, i haven\'t seen you around before."',
+          '<b>FIFTEEN</b> \'cause when you\'re fifteen and somebody tells you they love you you\'re gonna believe them and when you\'re fifteen feeling like there\'s nothing to figure out well count to ten, take it in this is life before you know who you\'re gonna be fifteen you sit in class next to red-headed abigail and soon enough you\'re best friends laughing at the other girls who think they\'re so cool',
+          '<b>FIFTEEN</b> we\'ll be out of here as soon as we can and then you\'re on your very first date and he\'s got a car and you\'re feeling like flying and your mamma\'s waiting up and you\'re thinking he\'s the one and you\'re dancing \'round the room when the night ends, when the night ends',
+          '<b>YOU\'RE NOT SORRY</b> all this time i was wasting, hoping you would come around i\'ve been giving out chances every time and all you do is let me down and it\'s taken me this long baby but i figured you out and you\'re thinking we\'ll be fine again',
+          '<b>YOU\'RE NOT SORRY</b> but not this time around you don\'t have to call anymore i won\'t pick up the phone this is the last straw don\'t wanna hurt anymore and you can tell me that you\'re sorry but i don\'t believe you baby like i did before you\'re not sorry',
+          '<b>YOU\'RE NOT SORRY</b> no no oh looking so innocent, i might believe you if i didn\'t know could\'ve loved you all my life if you hadn\'t left me waiting in the cold and you got your share of secrets and i\'m tired of being last to know and now you\'re asking me to listen cause it\'s worked each time before',
+          '<b>SPARKS FLY</b> the way you move is like a full on rainstorm and i\'m a house of cards you\'re the kind of reckless that should send me runnin\' but i kinda know that i won\'t get far and you stood there in front of me just close enough to touch close enough to hope you couldn\'t see what i was thinking of drop everything now meet me in the pouring rain',
+          '<b>SPARKS FLY</b> kiss me on the sidewalk take away the pain \'cause i see sparks fly whenever you smile get me with those green eyes, baby, as the lights go down give me something that\'ll haunt me when you\'re not around \'cause i see sparks fly',
+          '<b>SPARKS FLY</b> whenever you smile my mind forgets to remind me you\'re a bad idea you touch me once and it\'s really something, you find i\'m even better than you imagined i would be. i\'m on my guard for the rest of the world but with you i know it\'s no good and i could wait patiently but i really wish you would',
+          ]; 
+
+      var buttonID = document.getElementById('runScript');
+      $(buttonID).click(function() 
+        {
+          var question = $('#question' ).val();
+          if (question) {
+            for(var i = 0; i < all_containers.length ; i++) {
+            $(all_containers[i]).empty().append(myFunction (hiArray));    
+          } 
+          }
+          else {
+            alert("Please enter a question");
+
+          }
+
+         });
+      
+      function myFunction(hiArray) {
+          randNum = Math.floor(Math.random() * hiArray.length); 
+          return hiArray[randNum];
+      };
+    
+    </script>   
+</footer>
+  </body>
+</html>

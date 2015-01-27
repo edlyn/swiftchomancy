@@ -1,0 +1,27 @@
+
+<html>
+  <head>
+    <title>TAYLOR SWIFT STICHOMANCY</title>
+  </head>
+
+  <body>
+    <button onClick="quotes()">Click Here</button>
+    <p></p>
+    <textarea id="txtbox" style="width:400px; font:Georgia" readonly></textarea><p>
+  </body>
+
+  <script language="javascript">
+  function quotes(){
+    var aquote = new Array;
+    aquote[0]="\"We are never ever ever getting back together.\"";
+    aquote[1]="\"I'm wonderstruck, dancing all the way home.\"";
+    aquote[2]="\"I get drunk on jealousy.\""
+    aquote[3]="\"I hate that stupid ol' pickup truck you never let me drive.\""
+    aquote[4]="\"This is how it ought to be, laughing on a park bench.\""
+    aquote[5]="\"You've got a smile that could light up this whole town.\""
+rdmQuote = Math.floor(Math.random()*aquote.length);
+document.getElementById('taylorpast').innerHTML += hiArray[randNum] + "!";
+}
+
+</script>
+  </html>

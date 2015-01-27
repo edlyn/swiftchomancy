@@ -1,0 +1,36 @@
+body {
+  background: url(http://www.edlynyuen.com/taylor/taylor.jpg); no-repeat; background-size: cover; background-position: right; background-attachment: fixed;
+}
+
+.btn-warning { 
+  background-color: #A45E60; 
+  border: 0px;
+}
+
+#about {
+   padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 20px;
+    text-align: justify;
+}
+
+.col-md-4 {
+    text-align: justify;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid;
+}
+
+h1 { 
+  font-family: 'Megrim', Arial, cursive; font-weight: 400; font-size: 50px; color: #5E4352; text-align: center; text-shadow: 3px 3px #D8E4FF
+}
+
+h3 { 
+  font-family: 'Arial'; color: #BE3E82; font-weight: 800; text-align: center;
+}
+
+p {
+  font-family: 'Raleway', serif; font-weight: 400; font-size: 20px; color: #585563;
+}
