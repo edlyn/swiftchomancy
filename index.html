@@ -13,46 +13,43 @@
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- CSS changes for Taylor Swift - Swiftchomancy -->
+    <link href="taylor.css" rel="stylesheet">
 
     <script src="http://www.edlynyuen.com/taylor/jquery.min.js"></script>
 
   </head>
 
-  <body>
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <center>
-        <h1>SWIFTCHOMANCY</h1><br>
+      <div class="container-fluid" id="description">
+        <h1>SWIFTCHOMANCY</h1>
+        <br>
         <p>Ready for Taylor's words to heal your soul? It'll be like Swiftmas all over again, except like, so much better.</p>
         <br>
-            <INPUT TYPE="text" NAME="question" SIZE="30" id="question" placeholder="Enter your question here.">
+            <INPUT TYPE="text" NAME="entry.524215615" SIZE="40" id="question" placeholder="Enter your question here."><br><br>
             <button class="btn btn-warning" id="runScript">TAYLOR SPEAK NOW</button>
-          </center>
-      </div>
     </div>
 
-    <div class="container" id="adviceRow">
+    <div class="container-fluid" id="adviceRow">
       <div class="row">
       <!-- Example row of columns -->
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>PAST</h2>
-          <p><span id="taylorpast" class="contentAdvice">How did you feel about this question in the past?</span></p>
+          <p><span id="taylorpast" class="contentAdvice">?</span></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>PRESENT</h2>
-          <p><span id="taylorpresent" class="contentAdvice">What's going on in your present state?</span></p>
+          <p><span id="taylorpresent" class="contentAdvice">?</span></p>
        </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>FUTURE</h2>
-          <p><span id="taylorfuture">What's going to happen in the future?</span></p>
+          <p><span id="taylorfuture">?</span></p>
         </div>
       </div>
 
 <script type="text/javascript">
       var containers = {};
-      var all_containers = $("#adviceRow").find(".col-md-4").find("span");   
+      var all_containers = $("#adviceRow").find(".col-md-3").find("span");   
       var randNum;
       var hiArray = [
           'walking through a crowd the village is aglow kaleidoscope of loud heartbeats under coats',
@@ -94,7 +91,26 @@
       var buttonID = document.getElementById('runScript');
       $(buttonID).click(function() 
         {
-          var question = $('#question' ).val();
+
+    var field1 = $('#question').val()
+    // var field2 = lon;
+    $.ajax({
+        url: "https://docs.google.com/forms/d/1PVaujuAr7vpRVGI64LkWomcR1mfpq81vdAse1PJoxRM/formResponse",
+        // data: { "entry.855865385": field1},
+        data: { "entry.524215615": field1},
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+            0: function() {
+                //Success message
+            },
+            200: function() {
+                //Success Message
+            }
+        }
+    });
+
+          var question = $('#question').val();
           if (question) {
             for(var i = 0; i < all_containers.length ; i++) {
             $(all_containers[i]).empty().append(myFunction (hiArray));    
@@ -104,16 +120,14 @@
             alert("Please enter a question");
 
           }
-
          });
+
       
       function myFunction(hiArray) {
           randNum = Math.floor(Math.random() * hiArray.length); 
           return hiArray[randNum];
       };
 </script>
-
-      <hr>
 
       <footer>
         <p><em>Swiftchomancy</em> is divination using Taylor Swift lyrics, as inspired by the concept of stichomancy. Created by <a href="http://www.twitter.com/edlynyuen">Edlyn</a></p>

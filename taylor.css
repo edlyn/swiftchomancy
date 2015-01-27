@@ -1,0 +1,14 @@
+body { 
+	background:url(http://cdn1.ouchpress.com/media/celebrities/149/taylor-swift-22610.jpg) top right no-repeat; background-attachment:fixed; background-size: 100%; background-position: 450px 0px;
+}
+
+.jumbotron {
+	background-color: transparent;
+}
+
+#description {
+	min-height: 300px;
+}
+.col-md-3 {
+	min-height: 300px;
+}
