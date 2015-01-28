@@ -29,15 +29,47 @@ border-color: #A45E60;
  }
  .col-md-3 {
  	min-height: 200px;
-   background-color: #ffffff;
-  border: 0px;
-  opacity:0.6;
-  filter: alpha(opacity=60);
 }
 
  #footer {
 	height:50px;
 	position:absolute;
-	bottom:30px;
+	bottom:20px;
 	left:30px;
+}
+
+/* unvisited link */
+a:link {
+    color: #A45E60;
+}
+
+/* visited link */
+a:visited {
+    color: #A45E60;
+}
+
+/* mouse over link */
+a:hover {
+    color: #A45E60;
+}
+
+/* selected link */
+a:active {
+    color: #A45E60;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
