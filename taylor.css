@@ -16,9 +16,9 @@ background-color: #BE947E;
 border-color: #BE947E;
 }
  
- h1 { font-family: 'Megrim', cursive; font-weight: bold; font-size: 80px; color: #BE947E;}
- h2 { font-family: 'Megrim', cursive; font-weight: 400; font-size: 35px; color: #BE947E;}
- p { font-family: 'Roboto Slab', serif; font-weight: 400; font-size: 15px; color: #585563;}
+ h1 { font-family: 'Megrim', cursive; font-weight: bold; font-size: 80px; color: #A45E60;}
+ h2 { font-family: 'Megrim', cursive; font-weight: 400; font-size: 35px; color: #A45E60;}
+ p { font-family: 'Arial', serif; font-weight: 400; font-size: 15px; color: #585563;}
  
  .jumbotron {
  	background-color: transparent;
