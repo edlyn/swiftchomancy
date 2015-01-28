@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>SWIFTchomancy</title>
+    <title>SWIFTCHOMANCY</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,27 +25,28 @@
   </head>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="container-fluid" id="description" align="center">
-        <br><br>
-        <h1><center><strong>S W I F T C H O M A N C Y</strong></center></h1>
-        <p align="center">READY FOR TAYLOR'S WORDS TO HEAL YOUR SOUL? ASK A QUESTION THEN LET YOUR BFFL TELL YOU HOW SHE SEES THINGS.</p>
+      <div class="container-fluid" id="description">
+        <br><br><br><br><br><br>
+        <h1><strong>SWIFT</strong>CHOMANCY</h1>
         <br>
-            <INPUT TYPE="text" NAME="entry.524215615" SIZE="60" id="question" placeholder="SHOW ME MAGIC MADNESS HEAVEN SIN"><br><br>
+        <p>Ready for Taylor's words to heal your soul? It'll be like Swiftmas all over again, except like, so much better.</p>
+        <br>
+            <INPUT TYPE="text" NAME="entry.524215615" SIZE="40" id="question" placeholder="Enter your question here." border="0"><br><br>
             <button class="btn btn-warning" id="runScript">TAYLOR SPEAK NOW</button>
     </div>
 
-    <div class="container-fluid" id="adviceRow" align="center">
+    <div class="container-fluid" id="adviceRow">
       <div class="row">
       <!-- Example row of columns -->
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>PAST</h2>
           <p><span id="taylorpast" class="contentAdvice">?</span></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>PRESENT</h2>
           <p><span id="taylorpresent" class="contentAdvice">?</span></p>
        </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>FUTURE</h2>
           <p><span id="taylorfuture">?</span></p>
         </div>
@@ -53,7 +54,7 @@
 
 <script type="text/javascript">
       var containers = {};
-      var all_containers = $("#adviceRow").find(".col-md-4").find("span");   
+      var all_containers = $("#adviceRow").find(".col-md-3").find("span");   
       var randNum;
       var hiArray = [
           'walking through a crowd the village is aglow kaleidoscope of loud heartbeats under coats',
@@ -91,11 +92,9 @@
           'repeating history and you\'re getting sick of it but i believe in whatever you do and i\'ll do anything to see it through because these things will change can you feel it now? these walls that they put up to hold us back will fall down this revolution',
           'the time will come for us to finally win we sing hallelujah, we sing hallelujah so we\'ve been outnumbered raided and now cornered it\'s hard to fight when the fight ain\'t fair we\'re getting stronger now find things they never found they might be bigger but we\'re faster and never scared you can walk away, say we don\'t need this but there\'s something in your eyes says we can beat this', 
           ]; 
-
       var buttonID = document.getElementById('runScript');
       $(buttonID).click(function() 
         {
-
     var field1 = $('#question').val()
     // var field2 = lon;
     $.ajax({
@@ -113,7 +112,6 @@
             }
         }
     });
-
           var question = $('#question').val();
           if (question) {
             for(var i = 0; i < all_containers.length ; i++) {
@@ -122,10 +120,8 @@
           }
           else {
             alert("Please enter a question");
-
           }
          });
-
       
       function myFunction(hiArray) {
           randNum = Math.floor(Math.random() * hiArray.length); 
