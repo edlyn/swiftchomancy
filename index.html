@@ -19,6 +19,7 @@
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 
     <script src="http://www.edlynyuen.com/taylor/jquery.min.js"></script>
 
@@ -31,7 +32,7 @@
         <h1>SWIFTCHOMANCY</h1>
         <br>
         <p>Ready for T-Swizzle's words to heal your soul?</p>
-            <INPUT TYPE="text" NAME="entry.524215615" SIZE="40" id="question" placeholder="Enter your question here." border="0">
+            <INPUT TYPE="text" NAME="entry.524215615" SIZE="90" id="question" placeholder="What should I do with my life?" border="0"><br>
             <button class="btn btn-warning" id="runScript">TAYLOR SPEAK NOW</button>
     </div>
 
@@ -40,15 +41,15 @@
       <!-- Example row of columns -->
         <div class="col-md-3">
           <h2>PAST</h2>
-          <p><span id="taylorpast" class="contentAdvice">?</span></p>
+          <p><span id="taylorpast" class="contentAdvice">?????</span></p>
         </div>
         <div class="col-md-3">
           <h2>PRESENT</h2>
-          <p><span id="taylorpresent" class="contentAdvice">?</span></p>
+          <p><span id="taylorpresent" class="contentAdvice">?????</span></p>
        </div>
         <div class="col-md-3">
           <h2>FUTURE</h2>
-          <p><span id="taylorfuture">?</span></p>
+          <p><span id="taylorfuture" align="center">?????</span></p>
         </div>
       </div>
 
@@ -128,11 +129,28 @@
           return hiArray[randNum];
       };
 </script>
-
-      <footer>
-        <p><em>Swiftchomancy</em> is divination using Taylor Swift lyrics, as inspired by the concept of stichomancy. Created by <a href="http://www.twitter.com/edlynyuen">Edlyn</a></p>
+      <footer id="footer"><hr>
+        <p style="color:#585563"><em><a href="http://encyclopedia.thefreedictionary.com/stichomancy">Swiftchomancy</a></em> is divination using Taylor Swift lyrics, as inspired by the concept of stichomancy. Created by <a href="http://www.twitter.com/edlynyuen">Edlyn Yuen</a>.</p>
       </footer>
     </div> <!-- /container -->
 
   </body>
 </html>
+
+<!--COMMENTS FROM NIKKI
+
+  1. Bring Taylor in closer so her entire face and hands are in the page. See jpg. (X)
+2. Tone down the mauve color so Taylor is the sparkle. (X)
+3. Change the placeholder text to "What should I do with my life?" (X)
+4. Change the "Ready for..." text to black or dark gray (whatever it was before).(X)
+5. Make the PAST PRESENT FUTURE labels 2/3 the size of what it is now. (X)
+6. Make the footer gray with a horizontal rule above it. (X)
+7. End the footer with "Created by Edlyn Yuen." (X)
+8. Add "stichomancy" link on footer. (X)
+9. Revert button color back to mauve. Place it under text box. (X)
+10. Extend textbox so people can ask a full sentence and not have it get cut off. (X)
+11. Use a more standard typeface for the body copy. Like whatever's on http://swiftchomancy.com/ now. (X)
+12. Center each of the question marks under PAST, PRESENT, and FUTURE
+13. Use proper margins all around.
+
+-->
