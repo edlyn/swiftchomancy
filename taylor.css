@@ -16,7 +16,7 @@ border-color: #A45E60;
 }
  
  h1 { font-family: 'Megrim', cursive; font-weight: 400; font-size: 80px; color: #A45E60;}
- h2 { font-family: 'Megrim', cursive; font-weight: 400; font-size: 35px; color: #A45E60;}
+ h2 { font-family: 'Megrim', cursive; font-weight: bold; font-size: 28px; color: #A45E60;}
  p { font-family: 'Arial', serif; font-weight: 400; font-size: 15px; color: #585563;}
  
  .jumbotron {
@@ -28,7 +28,12 @@ border-color: #A45E60;
 
  }
  .col-md-3 {
- 	min-height: 200px;}
+ 	min-height: 200px;
+   background-color: #ffffff;
+  border: 0px;
+  opacity:0.6;
+  filter: alpha(opacity=60);
+}
 
  #footer {
 	height:50px;
