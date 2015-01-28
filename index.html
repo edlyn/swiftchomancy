@@ -31,7 +31,7 @@
         <br>
         <h1>SWIFTCHOMANCY</h1>
         <br>
-        <p>Ready for T-Swizzle's words to heal your soul?</p>
+        <p>Ready for Taylor's words to heal your soul? Ask a question you wish you could ask T-Swizzle:</p>
             <INPUT TYPE="text" NAME="entry.524215615" SIZE="90" id="question" placeholder="What should I do with my life?" border="0" style="margin-bottom:5px"><br>
             <button class="btn btn-warning" id="runScript">TAYLOR SPEAK NOW</button>
     </div>
@@ -39,22 +39,22 @@
     <div class="container-fluid" id="adviceRow">
       <div class="row">
       <!-- Example row of columns -->
-        <div class="col-md-3">
+        <div class="col-md-2">
           <h2>PAST</h2>
-          <p><span id="taylorpast" class="contentAdvice">?</span></p>
-        </div><br>
-        <div class="col-md-3">
+          <span id="taylorpast" class="contentAdvice">?</span>
+        </div>
+        <div class="col-md-2">
           <h2>PRESENT</h2>
-          <p><span id="taylorpresent" class="contentAdvice">?</span></p>
-       </div></div>
-        <div class="col-md-3">
+          <span id="taylorpresent" class="contentAdvice">?</span>
+       </div>
+        <div class="col-md-2">
           <h2>FUTURE</h2>
           <p><span id="taylorfuture" align="center">?</span></p>
-      </div>
+      </div></div>
 
 <script type="text/javascript">
       var containers = {};
-      var all_containers = $("#adviceRow").find(".col-md-3").find("span");   
+      var all_containers = $("#adviceRow").find(".col-md-2").find("span");   
       var randNum;
       var hiArray = [
           'walking through a crowd the village is aglow kaleidoscope of loud heartbeats under coats',
